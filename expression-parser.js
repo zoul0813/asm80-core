@@ -29,7 +29,7 @@ if (!Array.indexOf) {
 }
 */
 
-  
+
   function object(o) {
     function F() {}
     F.prototype = o;
@@ -891,6 +891,10 @@ export function Token(type_, index_, prio_, number_) {
               strx = "0x" + str.substr(0, str.length - 1);
               base = 16;
             }
+          }
+          if (str[1] === "b" || str[1] === "B") {
+            strx = str.substr(2);
+            base = 2;
           }
           if (str[str.length - 1] === "b" || str[str.length - 1] === "B") {
             if (base == 10) {
