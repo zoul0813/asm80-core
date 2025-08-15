@@ -29,7 +29,7 @@ const cpus = [I8080, M6800, C6502, Z80, I8008, CDP1802, M6809];
 export const compile = async (source, fileSystem, opts = {assembler:null}, filename="noname") => {
 
   if (typeof opts.assembler == "string") {
-    opts.assembler = cpus.find(x=>x.cpu.toUpperCase()==opts.assembler.toUpperCase());
+    opts.assembler = cpus.find(x=>x?.cpu?.toUpperCase()==opts.assembler.toUpperCase());
   }
 
   if (!opts.assembler || typeof opts.assembler != "object") {
