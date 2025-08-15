@@ -96,7 +96,7 @@ export const prepro = async (V, opts = {}, fullfile) => {
   let reptCount = null;
   const out = [];
   let outi = 0;
-  
+
   for (const item of V) {
     op = item.line;
     const remark = op.match(/\s*(.)/);
@@ -178,7 +178,7 @@ export const prepro = async (V, opts = {}, fullfile) => {
       }
 
       //console.log(ni)
-      const preni = await prepro(ni, {}, fullni);
+      const preni = await prepro(ni, opts, fullni);
       for (const preniItem of preni[0]) {
         preniItem.includedFile = params[0].replace(/\"/g, "");
         preniItem.includedFileAtLine = item.numline;
